@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <h3>Stripe Charge Failure:</h3>
+    <p><strong>Failed Request Information:</strong></p>
+    <p>Request id: {{request._id}}</p>
+    <p>Request date: {{request.date}}</p>
+    <p>Request horse barn name: {{request._horse.barnName}}</p>
+    <% if (request._horseManager) {%>
+        <p>Request horse manager name: {{request._horseManager.name}}</p>
+        <p>Request horse manager email: {{request._horseManager.email}}</p>
+        <p>Request horse manager id: {{request._horseManager._id}}</p>
+    <% } %>
+    <p>Request service provider name: {{request._serviceProvider.name}}</p>
+    <p>Request service provider email: {{request._serviceProvider.email}}</p>
+    <p>Request service provider id: {{request._serviceProvider._id}}</p>
+    <p>Request total: {{request.total}}</p>
+  </body>
+</html>

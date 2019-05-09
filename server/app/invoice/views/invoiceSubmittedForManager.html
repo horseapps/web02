@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <h3>Invoice Submitted</h3>
+    <p>An invoice for {{invoiceObject.horse}} has been submitted. Please go to the HorseLinc app to initiate payment.</p>
+    <p>
+      <strong>Invoice Information:</strong>
+    </p>
+    <p>Submitted on: {{invoiceObject.createdAt}}</p>
+    <p>Service provider: {{invoiceObject.serviceProviderName}} ({{invoiceObject.serviceProviderEmail}})</p>
+    <p>Amount: ${{invoiceObject.amount.toFixed(2)}}</p>
+    <p>Number of services: {{invoiceObject.serviceCount}}</p>
+  </body>
+</html>

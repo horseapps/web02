@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+</head>
+
+<body style='font-family: "Helvetica", sans-serif; color: black; width: 1000px; margin: 0; background-color: #EAEEF3;'>
+  <header style="height: 75px; background-color: #4F748C;">
+    <div class="content-inner header-inner" style="height: 100%; position: relative; width: 600px; margin: auto;">
+      <img style="margin-top: 25px;" src="https://s3-us-west-2.amazonaws.com/sm-horselinc/email_assets/Logo_email.png" />
+    </div>
+  </header>
+
+  <div class="content-inner" style="width: 600px; margin: auto;">
+    <h1 style="margin-bottom: 10px; color: black">Invoice Complete</h1>
+    <p class="subhead" style="color: #818181; font-size: 24px; margin-top: 0px; font-weight: 300;">The following
+      invoice has been paid.</p>
+
+    <div class="invoice-info" style="background-color: #FFF; margin-bottom: 20px;">
+      <div class="info-header" style="height: 70px; border-bottom-width: 1px; border-bottom-color: #EAEEF3; border-bottom-style: solid; position: relative;">
+        <h3 style="display: inline-block; color: black; position: absolute; top: 30%; margin-left: 30px; -webkit-transform: translateY(-500); -ms-transform: translateY(-50%); transform: translateY(-50%);">Invoice
+          Information</h3>
+      </div>
+      <div class="horse-and-human" style="border-bottom-width: 1px; border-bottom-color: #EAEEF3; border-bottom-style: solid; padding-top: 20px; padding-bottom: 20px;">
+        <table class="horse">
+          <tr>
+            <td>
+              <div class="avatar-with-name" style="margin-left: 30px; margin-bottom: 15px;">
+                <img src="https://s3-us-west-2.amazonaws.com/sm-horselinc/email_assets/profile-horse.png">
+              </div>
+            </td>
+            <td>
+              <div class="display-name" style="display: inline-block; margin-bottom: 25px; margin-left: 5px; color: black;">{{managerInvoiceData.horseName}}</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="avatar-with-name" style="margin-left: 30px;">
+                <img src="https://s3-us-west-2.amazonaws.com/sm-horselinc/email_assets/profile-person.png">
+              </div>
+            </td>
+            <td>
+              <div class="display-name provider-name" style="display: inline-block; margin-top: 25px; margin-bottom: 25px; margin-left: 5px; color: black;">{{managerInvoiceData.serviceProviderName}}
+                ({{managerInvoiceData.serviceProviderEmail}})</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="tasks-and-trainer" style="margin-left: 30px; padding-top: 20px; padding-bottom: 20px;">
+        <h3 style="color: black">Services Performed</h3>
+        <table style="width: 100%;">
+          <% managerInvoiceData.services.forEach((service) => { %>
+            <tr class="service-line" style="width: 100%; color: black">
+              <td style="color: black">
+                {{service.service}} (x{{service.quantity || 1}})
+              </td>
+              <td align="right" style="color: black">
+                ${{service.rate * (service.quantity || 1)}}
+              </td>
+              <td style="width: 30px;">
+              </td>
+            </tr>
+          <% }); %>
+          <tr>
+            <td>
+              <p style="color: black">Trainer name: {{managerInvoiceData.trainerName}}</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="payment-info" style="background-color: #FFF; padding-bottom: 20px;">
+      <div class="payment-header" style="height: 70px; border-bottom-width: 1px; border-bottom-color: #EAEEF3; border-bottom-style: solid; position: relative;">
+        <h3 style="display: inline-block; position: absolute; top: 30%; margin-left: 30px; color: black; -webkit-transform: translateY(-500); -ms-transform: translateY(-50%); transform: translateY(-50%);">Paid
+          on: {{managerInvoiceData.paidInFullAt}}</h3>
+      </div>
+      <table style="width: 100%; margin-top: 25px;">
+        <tr class="line-item first-line" style="margin-left: 30px; margin-bottom: 15px;">
+          <td class="left" style="color: #818181; display: inline-block; margin-left: 30px;">
+            Subtotal
+          </td>
+          <td class="right" style="margin-right: 30px; padding-bottom: 18px; color: black;" align="right">
+            ${{managerInvoiceData.subtotal}}
+          </td>
+          <td style="width: 30px;">
+          </td>
+        </tr>
+
+        <tr class="line-item" style="margin-left: 30px; margin-bottom: 15px;">
+          <td class="left" style="color: #818181; display: inline-block; margin-left: 30px;">
+            Tip
+          </td>
+          <td class="right" style="margin-right: 30px; padding-bottom: 18px; color: black;" align="right">
+            ${{managerInvoiceData.tip}}
+          </td>
+          <td style="width: 30px;">
+          </td>
+        </tr>
+
+        <tr class="line-item" style="margin-left: 30px; margin-bottom: 15px;">
+          <td class="left" style="color: #818181; display: inline-block; margin-left: 30px;">
+            Total
+          </td>
+          <td class="right" style="margin-right: 30px; padding-bottom: 18px; color: black;" align="right">
+            ${{managerInvoiceData.invoiceTotal}}
+          </td>
+          <td style="width: 30px;">
+          </td>
+        </tr>
+
+        <% if (managerInvoiceData.multipleOwnerInfo) { %>
+          <!-- Partial owners see their percentage and portion paid as well-->
+          <div class="payment-header" style="height: 50px; position: relative;">
+            <h3 style="display: inline-block; position: absolute; top: 30%; margin-left: 30px; -webkit-transform: translateY(-500); -ms-transform: translateY(-50%); transform: translateY(-50%);">Paid by:</h3>
+          </div>
+          <% managerInvoiceData.multipleOwnerInfo.forEach((ownerInfo) => { %>
+            <tr class="line-item" style="margin-left: 30px; margin-bottom: 15px;">
+              <td class="left" style="color: #818181; display: inline-block; margin-left: 30px;">
+                {{ownerInfo.name}} (owns {{ownerInfo.percentage}}%)
+              </td>
+              <td class="right" style="margin-right: 30px; padding-bottom: 18px; color: black;" align="right">
+                ${{ownerInfo.paidAmount}}
+              </td>
+              <td style="width: 30px;">
+              </td>
+            </tr>
+          <% }); %>
+        <% } %>
+
+      </table>
+    </div>
+    <p style="color: #4F748C; padding-bottom: 15px; margin-bottom: 15px;">If you have any questions, contact us at <a href="mailto:info@horselinc.com">info@horselinc.com</a></p>
+  </div>
+</body>
+
+</html>

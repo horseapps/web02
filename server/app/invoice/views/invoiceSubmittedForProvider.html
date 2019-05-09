@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <h3>Invoice Submitted</h3>
+    <p>{{providerInvoiceObject.serviceProviderName}} has submitted an invoice for {{providerInvoiceObject.horse}}.</p>
+    <p>
+      <strong>Invoice Information:</strong>
+    </p>
+    <p>Submitted on: {{providerInvoiceObject.createdAt}}</p>
+    <p>Main Service provider: {{providerInvoiceObject.serviceProviderName}} ({{providerInvoiceObject.serviceProviderEmail}})</p>
+    <p>Horse Trainer: {{providerInvoiceObject.horseTrainerName}} ({{providerInvoiceObject.horseTrainerEmail}})</p>
+    <p>Amount: ${{providerInvoiceObject.amount.toFixed(2)}}</p>
+    <p>Number of services: {{providerInvoiceObject.serviceCount}}</p>
+  </body>
+</html>

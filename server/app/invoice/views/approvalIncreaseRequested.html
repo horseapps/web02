@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <h3>Invoice Over Payment Approver Limit</h3>
+  <p>{{invoiceData.horseManagerName}} does not have the ability to reolve this pending invoice of ${{invoiceData.total}}. To resolve this pending invoice, edit {{invoiceData.horseManagerName}}'s maximum approved amount, or initiate payment in the payments tab.</p>
+  <p>
+    <strong>Invoice Information:</strong>
+  </p>
+  <p>Submitted on: {{invoiceData.date}}</p>
+  <p>Approval requested from: {{invoiceData.horseManagerName}} ({{invoiceData.horseManagerEmail}})</p>
+  <p>Services completed by: {{invoiceData.serviceProviderName}} ({{invoiceData.serviceProviderEmail}})</p>
+  <p>Amount: ${{invoiceData.total}}</p>
+  <p>Number of services: {{invoiceData.serviceCount}}</p>
+</body>
+</html>

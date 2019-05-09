@@ -1,0 +1,128 @@
+/**
+ * These styles are specific to the admin views
+ */
+
+/deep/ .auth-layout {
+  position: fixed;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  background: #dbdfe2;
+
+  .wrapper {
+    padding-top: 50px;
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  .wrapper.toggled {
+    padding-left: 220px;
+  }
+
+  .sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 220px;
+    width: 0;
+    height: 100%;
+    margin-left: -220px;
+    overflow-y: auto;
+    background: #3b4146;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  .wrapper.toggled .sidebar-wrapper {
+    width: 220px;
+  }
+
+  .page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding-top: 15px;
+  }
+
+  .wrapper.toggled .page-content-wrapper {
+    position: absolute;
+    margin-right: -220px;
+  }
+
+  /* Page header */
+  .page-header {
+    border: none;
+    margin: 0;
+    padding-right: 100px;
+    position: relative;
+  }
+
+  .page-header h1 {
+    margin-top: 0;
+    font-size: 2em;
+  }
+
+  .page-header .actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
+
+  /**
+   * Panel
+   */
+
+  .panel-title {
+    padding: 8px 4px 18px;
+    border-bottom: solid 1px #eee;
+  }
+
+  .panel-title {
+    font-weight: normal;
+    color: #777;
+  }
+
+  /**
+   * Buttons
+   */
+
+  .btn {
+    border-radius: 2px !important;
+  }
+
+  /**
+   * Form styles
+   */
+
+  .custom-form {
+    .custom-object {
+      border: 1px solid #ededed;
+      border-radius: 10px;
+      padding: 5px;
+      margin-bottom: 10px;
+      background: rgba(240, 240, 240, 0.5);
+    }
+  }
+
+  /**
+   * List styles
+   */
+
+  .list-group-item:first-child {
+    border-top: none;
+  }
+
+  .list-group-item:last-child {
+    border-bottom: none;
+  }
+
+  .list-group-item {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}

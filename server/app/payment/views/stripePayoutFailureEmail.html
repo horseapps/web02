@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <h3>Stripe Payout Failure</h3>
+    <p>The following invoice has been marked as paid, but we're having trouble sending the funds to {{transferInformation.serviceProviderName}} account.</p>
+    <p>If you haven't received an update from us yet, please reach out to info@horselinc.com.</p>
+    <p><strong>Payout Information:</strong></p>
+    <p>Submitted on: {{transferInformation.invoiceDate}}</p>
+    <p>Number of Services: {{transferInformation.serviceCount}}</p>
+    <% if (transferInformation.isReassignee) { %>
+        <p>Main Service provider: {{transferInformation.mainServiceProviderName}} ({{transferInformation.mainServiceProviderEmail}})</p>
+    <% } %>
+    <p>Horse Trainer: {{transferInformation.horseTrainerName}}</p>
+    <p>Amount: ${{transferInformation.total}}</p>
+    <p>Number of services: {{transferInformation.serviceCount}}</p>
+    <p>Invoice id: {{transferInformation.invoiceId}}</p>
+    <% if (transferInformation.requestId) { %>
+        <p>Failed Request id: {{transferInformation.requestId}}</p>
+    <% } else { %>
+        <p>The payout that failed was for the tip on your invoice.</p>
+    <% } %>
+  </body>
+</html>

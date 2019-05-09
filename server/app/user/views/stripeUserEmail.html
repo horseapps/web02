@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <h3>There was an issue with your payout</h3>
+    <% if (data.object.failure_message) { %>
+      <p><strong>Failure Message: </strong>{{data.object.failure_message}}</p>
+    <% } %>
+
+    <p><strong>Amount: </strong>${{data.object.amount / 100}}</p>
+    <p><strong>Transaction Id: </strong>{{data.object.balance_transaction}}</p>
+
+    <p>Please make sure your Stripe account is up to date and feel free to contact BBy with any questions.</p>
+  </body>
+</html>

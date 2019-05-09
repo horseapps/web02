@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <h3>Approval Requested</h3>
+  <p>{{invoiceData.horseManagerName}} does not have the ability to initate payments on your behalf. Consider adding them as an approved payer and giving them the ability to manage your invoices. In the meantime, you can resolve this payment within the HorseLinc app.</p>
+  <p>
+    <strong>Invoice Information:</strong>
+  </p>
+  <p>Submitted on: {{invoiceData.date}}</p>
+  <p>Approval requested from: {{invoiceData.horseManagerName}} ({{invoiceData.horseManagerEmail}})</p>
+  <p>Services completed by: {{invoiceData.serviceProviderName}} ({{invoiceData.serviceProviderEmail}})</p>
+  <p>Amount: ${{invoiceData.total}}</p>
+  <p>Number of services: {{invoiceData.serviceCount}}</p>
+</body>
+</html>

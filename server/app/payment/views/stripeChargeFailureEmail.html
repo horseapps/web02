@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <h3>Stripe Charge Failure:</h3>
+    <p>
+      <strong>Failed Payout Information:</strong>
+    </p>
+    <p>Payment date: {{attemptedPayment.date}}</p>
+    <% if (attemptedPayment._horseManager) {%>
+        <p>Payment horse manager name: {{attemptedPayment._horseManager.name}}</p>
+        <p>Payment horse manager email: {{attemptedPayment._horseManager.email}}</p>
+        <p>Payment horse manager id: {{attemptedPayment._horseManager._id}}</p>
+    <% } %>
+    <% if (attemptedPayment._payingUser) {%>
+        <p>Paying user name: {{attemptedPayment._payingUser.name}}</p>
+        <p>Paying user email: {{attemptedPayment._payingUser.email}}</p>
+        <p>Paying user id: {{attemptedPayment._payingUser._id}}</p>
+    <% } %>
+    <p>Payment service provider name: {{attemptedPayment._serviceProvider.name}}</p>
+    <p>Payment service provider email: {{attemptedPayment._serviceProvider.email}}</p>
+    <p>Payment service provider id: {{attemptedPayment._serviceProvider._id}}</p>
+    <p>Amount: {{attemptedPayment.amount}}</p>
+    <p>Tip: {{attemptedPayment.tip}}</p>
+    <% if (attemptedPayment._invoice) {%>
+        <p>Invoice id: {{attemptedPayment._invoice}}</p>
+    <% } %>
+  </body>
+</html>

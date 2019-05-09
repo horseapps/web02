@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <h3>Payment Requested</h3>
+  <p>An invoice for {{invoiceData.horse}} remains outstanding. Please go to the HorseLinc app to initiate a payment.</p>
+  <p>
+    <strong>Invoice Information:</strong>
+  </p>
+  <p>Submitted On: {{invoiceData.date}}</p>
+  <p>Amount: ${{invoiceData.total}}</p>
+  <p>Services Completed By: {{invoiceData.serviceProviderName}} ({{invoiceData.serviceProviderEmail}})</p>
+  <p>Number of Services: {{invoiceData.serviceCount}}</p>
+</body>
+</html>

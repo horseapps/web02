@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <h3>Invoice Over Payment Approver Limit:</h3>
+  <p>
+    <strong>Invoice Information:</strong>
+  </p>
+  <p>Services Subtotal: {{invoice.total}}</p>
+  <p>Tip Amount: {{invoice.tip}}</p>
+  <p>Invoice Total: {{invoice.totalWithTip}}</p>
+  <p>Payment approver name: {{invoice.approverName}}</p>
+  <p>Payment approver max amount: {{invoice.approvalMaxAmount}}</p>
+  <p>Payment approver email: {{invoice.approverEmail}}</p>
+  <br>
+  <p>To resolve this pending invoice, you can either pay it from your own account 
+     or visit the Edit Payment Info page and raise {{invoice.approverName}}'s maximum approved amount.
+  </p>
+</body>
+
+</html>
