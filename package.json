@@ -86,7 +86,7 @@
     "snapmobile-mailer": "git+https://37327d5496e19922f3042f023495176af24ba924:x-oauth-basic@github.com/SnapMobileIO/SnapMobile-Mailer.git",
     "snapmobile-onesignal": "git+https://37327d5496e19922f3042f023495176af24ba924:x-oauth-basic@github.com/SnapMobileIO/SnapMobile-OneSignal.git",
     "stripe": "^5.4.0",
-    "tinymce": "^4.5.6",
+    "tinymce": "^5.7.1",
     "ts-helpers": "^1.1.1",
     "validator": "^7.0.0",
     "zone.js": "^0.8.5"
