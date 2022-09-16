@@ -48,7 +48,7 @@
     "aws-sdk": "^2.3.5",
     "bluebird": "^3.3.5",
     "body-parser": "^1.15.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "composable-middleware": "^0.3.0",
     "compression": "^1.6.1",
     "connect-mongo": "^1.1.0",
